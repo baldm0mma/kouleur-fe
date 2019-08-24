@@ -14,9 +14,9 @@ export const setCurrentProject = (id, name) => ({
   name
 });
 
-export const setError = error => ({
+export const setError = errorMessage => ({
   type: 'SET_ERROR',
-  error
+  errorMessage
 });
 
 export const toggleNewProject = boolean => ({

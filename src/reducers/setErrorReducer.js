@@ -1,7 +1,7 @@
 export const setErrorReducer = (state = '', action) => {
   switch (action.type) {
-    case 'SET_ERROR_REDUCER':
-      return action.error;
+    case 'SET_ERROR':
+      return action.errorMessage;
     default:
       return state;
   }

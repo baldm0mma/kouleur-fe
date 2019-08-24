@@ -29,3 +29,11 @@
   background: black;
   opacity: 0.6;
 }
+#modal-title {
+  font-size: 1.7rem;
+  padding: 10px 0;
+}
+
+#create-project-button {
+  margin-right: 20px;
+}

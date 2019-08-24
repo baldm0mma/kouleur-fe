@@ -9,6 +9,6 @@ export const rootReducer = combineReducers({
   currentProject: setCurrentProjectReducer,
   palettes: setPalettesReducer,
   projects: setProjectsReducer,
-  error: setErrorReducer,
+  errorMessage: setErrorReducer,
   newProjectToggle: toggleNewProjectReducer
 });
