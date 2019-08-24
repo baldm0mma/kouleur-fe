@@ -1,40 +1,13 @@
 import React, { Component } from 'react';
 import ColorScheme from 'color-scheme';
+import { setCurrentPalette } from '../../actions'
+import { connect } from 'react-redux'
+
+
 import './Picker.css';
 
 export class Picker extends Component {
-  constructor() {
-    super();
-    this.state = {
-      swatches: [
-        {
-          name: 'swatch_1',
-          hex: '',
-          isLocked: false
-        },
-        {
-          name: 'swatch_2',
-          hex: '',
-          isLocked: false
-        },
-        {
-          name: 'swatch_3',
-          hex: '',
-          isLocked: false
-        },
-        {
-          name: 'swatch_4',
-          hex: '',
-          isLocked: false
-        },
-        {
-          name: 'swatch_5',
-          hex: '',
-          isLocked: false
-        }
-      ]
-    };
-  }
+  
 
   generateHex = () => {
     const characters = '0123456789abcdef';
@@ -50,13 +23,35 @@ export class Picker extends Component {
     scheme.from_hex(this.generateHex()).scheme('triade')
     let colors = scheme.colors();
     let finalColors = colors.slice(0, 5);
+    let updatedPalettes = this.props.currentPalette.map( (curPal, i) => {
+      if(curPal.isLocked) {
+        return curPal
+      }
+      this.props.currentPalette[i].hex = finalColors[i]
+      return curPal
+    
+    })
+    this.props.setCurrentPalette(updatedPalettes)
   }
 
   componentDidMount = () => {
-    console.log(this.getColors())
+    this.getColors()
   }
 
   render = () => {
     return <div>Hi</div>;
   };
 }
+
+export const mapStateToProps = ({ currentPalette }) => ({
+  currentPalette
+});
+
+export const mapDispatchToProps = dispatch => ({
+  setCurrentPalette: (currentPalette) => dispatch(setCurrentPalette(currentPalette))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Picker);
