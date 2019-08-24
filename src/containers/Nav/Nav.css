@@ -1,0 +1,54 @@
+
+nav{
+  background-color: black;
+  color: #bbbbbb;
+}
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+  padding: 1rem;
+}
+
+#new-project-button {
+  margin-left: 4rem;
+}
+
+.project-control-container {
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.site-title {
+  font-size: 4em;
+  padding: 0;
+}
+
+.k {
+  color: #368360;
+}
+
+.o{
+  color: #357964;
+}
+
+.u{
+  color: #356f69;
+}
+
+.l{
+  color: #35656e;
+}
+
+.e{
+  color: #355b73;
+}
+
+.u2 {
+  color: #355178;
+}
+
+.r{
+  color: #35477d;
+}

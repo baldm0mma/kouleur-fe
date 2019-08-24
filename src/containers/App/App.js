@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { getProjects } from '../../utilities/apiCalls';
 import { setProjects, setPalettes, setError } from '../../actions';
 import { connect } from 'react-redux';
+import Nav from '../Nav/Nav.js'
 
 export class App extends Component {
   componentDidMount = async () => {
@@ -19,7 +20,9 @@ export class App extends Component {
   };
 
   render = () => {
-    return <div>Hello World</div>;
+    return <main>
+      <Nav />
+    </main>;
   };
 }
 
