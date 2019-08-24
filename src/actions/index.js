@@ -22,4 +22,9 @@ export const setError = errorMessage => ({
 export const toggleNewProject = boolean => ({
   type: 'TOGGLE_NEW_PROJECT',
   boolean
+});
+
+export const setCurrentPalette = palette => ({
+  type: 'SET_CURRENT_PALETTE',
+  palette
 })

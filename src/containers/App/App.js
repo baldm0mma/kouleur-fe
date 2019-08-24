@@ -2,17 +2,26 @@ import './App.css';
 import { connect } from 'react-redux';
 import { devProjects, devPalettes } from '../../utilities/urls';
 import { getProjects } from '../../utilities/apiCalls';
-import { setProjects, setPalettes, setError, setCurrentProject } from '../../actions';
+import {
+  setProjects,
+  setPalettes,
+  setError,
+  setCurrentProject
+} from '../../actions';
 import Nav from '../Nav/Nav.js';
 import NewProjectModal from '../NewProjectModal/NewProjectModal';
 import React, { Component } from 'react';
+import { Picker } from '../Picker/Picker';
 
 export class App extends Component {
   componentDidMount = async () => {
     try {
       const projects = await getProjects(devProjects);
       await this.props.setProjects(projects);
-      await this.props.setCurrentProject(projects[0].id, projects[0].project_name)
+      await this.props.setCurrentProject(
+        projects[0].id,
+        projects[0].project_name
+      );
       const palettes = await getProjects(devPalettes);
       await this.props.setPalettes(palettes);
     } catch (error) {
@@ -25,14 +34,21 @@ export class App extends Component {
       <main>
         <Nav />
         {this.props.newProjectToggle && <NewProjectModal />}
+        <h3>Current Project: {this.props.currentProject.name}</h3>
+        <Picker></Picker>
       </main>
     );
   };
 }
 
-export const mapStateToProps = ({ error, newProjectToggle }) => ({
+export const mapStateToProps = ({
+  errorMessage,
   newProjectToggle,
-  error
+  currentProject
+}) => ({
+  currentProject,
+  errorMessage,
+  newProjectToggle
 });
 
 export const mapDispatchToProps = dispatch => ({
