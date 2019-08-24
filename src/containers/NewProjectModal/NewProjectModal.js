@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './NewProjectModal.css';
 import { connect } from 'react-redux';
-import { setCurrentProject, toggleNewProject, setError } from '../../actions';
+import { setCurrentProject, toggleNewProject, setError, setProjects } from '../../actions';
 import { devProjects } from '../../utilities/urls';
 import { Button, Form } from 'semantic-ui-react';
-import { postProjectName } from '../../utilities/apiCalls';
+import { postProjectName, getProjects } from '../../utilities/apiCalls';
 
 class NewProjectModal extends Component {
   constructor() {
@@ -22,8 +22,9 @@ class NewProjectModal extends Component {
     const name = this.state.project_name;
     try {
       const response = await postProjectName(devProjects, name);
-      await console.log('response', response);
       this.props.setCurrentProject(response, name);
+      const projects = await getProjects(devProjects);
+      await this.props.setProjects(projects);
       this.props.toggleNewProject(false);
     } catch (error) {
       this.props.setError(error.message);
@@ -37,6 +38,7 @@ class NewProjectModal extends Component {
           <Form>
             <Form.Field>
               <label id='modal-title'>Project Name</label>
+              {this.props.errorMessage && <p>Sorry, there was an issue posting: {this.props.errorMessage}</p>}
               <input
                 placeholder='Project Name'
                 value={this.state.project_name}
@@ -64,14 +66,16 @@ class NewProjectModal extends Component {
   }
 }
 
-export const mapStateToProps = ({ projects }) => ({
-  projects
+export const mapStateToProps = ({ projects, errorMessage }) => ({
+  projects,
+  errorMessage
 });
 
 export const mapDispatchToProps = dispatch => ({
   setCurrentProject: (id, name) => dispatch(setCurrentProject(id, name)),
   toggleNewProject: boolean => dispatch(toggleNewProject(boolean)),
-  setError: error => dispatch(setError(error))
+  setError: error => dispatch(setError(error)),
+  setProjects: results => dispatch(setProjects(results))
 });
 
 export default connect(
