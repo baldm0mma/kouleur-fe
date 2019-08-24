@@ -18,3 +18,8 @@ export const setError = error => ({
   type: 'SET_ERROR',
   error
 });
+
+export const toggleNewProject = boolean => ({
+  type: 'TOGGLE_NEW_PROJECT',
+  boolean
+})

@@ -6,6 +6,7 @@ import { getProjects } from '../../utilities/apiCalls';
 import { setProjects, setPalettes, setError } from '../../actions';
 import { connect } from 'react-redux';
 import Nav from '../Nav/Nav.js'
+import NewProjectModal from '../NewProjectModal/NewProjectModal'
 
 export class App extends Component {
   componentDidMount = async () => {
@@ -22,6 +23,7 @@ export class App extends Component {
   render = () => {
     return <main>
       <Nav />
+      <NewProjectModal />
     </main>;
   };
 }

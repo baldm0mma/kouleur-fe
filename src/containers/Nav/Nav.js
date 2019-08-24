@@ -1,14 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Dropdown, Button } from 'semantic-ui-react'
-import {setCurrentProject} from '../../actions'
+import {setCurrentProject, toggleNewProject} from '../../actions'
 import './Nav.css'
 
 
-const Nav = ({ projects, setCurrentProject }) => {
+const Nav = ({ projects, setCurrentProject, toggleNewProject }) => {
 
   const handleClick = (id, name) => {
     setCurrentProject(id, name)
+  }
+
+  const clickNewProject = () => {
+    toggleNewProject(true)
   }
 
   const buildProjects = projects.map( proj => {
@@ -33,7 +37,7 @@ const Nav = ({ projects, setCurrentProject }) => {
             {buildProjects}
           </Dropdown.Menu>
         </Dropdown>
-        <Button id='new-project-button'>New Project</Button>
+        <Button id='new-project-button' onClick={clickNewProject}>New Project</Button>
       </div>
       </section>
     </nav>
@@ -43,11 +47,13 @@ const Nav = ({ projects, setCurrentProject }) => {
 
 
 export const mapStateToProps = ({ projects }) => ({
-  projects
+  projects,
 })
 
 export const mapDispatchToProps = dispatch => ({
-  setCurrentProject: (id, name) => dispatch(setCurrentProject(id, name))
+  setCurrentProject: (id, name) => dispatch(setCurrentProject(id, name)),
+  toggleNewProject: (boolean) => dispatch(toggleNewProject(boolean))
+
 })
 
 
