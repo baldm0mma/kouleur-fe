@@ -3,6 +3,7 @@ import ColorScheme from 'color-scheme';
 import { setCurrentPalette } from '../../actions'
 import { connect } from 'react-redux'
 import Swatch from '../Swatch/Swatch'
+import { Button } from 'semantic-ui-react'
 
 
 import './Picker.css';
@@ -47,9 +48,13 @@ export class Picker extends Component {
 
   render = () => {
 
-    return <div className='swatch-container'>
-      {this.createSwatches()}
-    </div>;
+    return <section>
+      <div className='swatch-container'>
+        {this.createSwatches()}
+      </div>
+      <Button id='palette-button' onClick={this.getColors}>Generate</Button>
+      <Button id='palette-button'>Save</Button>
+    </section>
   };
 }
 

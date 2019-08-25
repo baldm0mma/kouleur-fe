@@ -1,3 +1,7 @@
 .swatch-container {
   display: flex;
 }
+
+#palette-button {
+  margin: 15px 15px 0 0;
+}
