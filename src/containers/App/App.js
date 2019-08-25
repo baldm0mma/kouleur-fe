@@ -33,9 +33,11 @@ export class App extends Component {
     return (
       <main>
         <Nav />
+        <section className='body'>
         {this.props.newProjectToggle && <NewProjectModal />}
         <h3>Current Project: {this.props.currentProject.name}</h3>
         <Picker></Picker>
+        </section>
       </main>
     );
   };

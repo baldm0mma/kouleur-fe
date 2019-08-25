@@ -32,12 +32,12 @@ const Nav = ({ projects, setCurrentProject, toggleNewProject }) => {
         <span className='r'>r</span>
         </h1>
       <div className='project-control-container'>
-        <Dropdown text='Projects'>
+        <Button id='new-project-button' onClick={clickNewProject}>New Project</Button>
+        <Dropdown id='new-project-dropdown' text='Projects'>
           <Dropdown.Menu>
             {buildProjects}
           </Dropdown.Menu>
         </Dropdown>
-        <Button id='new-project-button' onClick={clickNewProject}>New Project</Button>
       </div>
       </section>
     </nav>

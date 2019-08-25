@@ -1,0 +1,8 @@
+.swatch {
+  flex: 1;
+}
+
+.color-swatch{
+  height: 50vh;
+  transition: all 0.5s ease;
+}

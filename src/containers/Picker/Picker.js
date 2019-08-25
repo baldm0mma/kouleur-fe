@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ColorScheme from 'color-scheme';
 import { setCurrentPalette } from '../../actions'
 import { connect } from 'react-redux'
+import Swatch from '../Swatch/Swatch'
 
 
 import './Picker.css';
@@ -34,12 +35,21 @@ export class Picker extends Component {
     this.props.setCurrentPalette(updatedPalettes)
   }
 
+  createSwatches = () => {
+    return this.props.currentPalette.map(color => {
+      return <Swatch hex={color.hex} />
+    })
+  }
+
   componentDidMount = () => {
     this.getColors()
   }
 
   render = () => {
-    return <div>Hi</div>;
+
+    return <div className='swatch-container'>
+      {this.createSwatches()}
+    </div>;
   };
 }
 
