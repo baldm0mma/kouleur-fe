@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Dropdown, Button } from 'semantic-ui-react'
+import { Dropdown, Button, Icon } from 'semantic-ui-react'
 import {setCurrentProject, toggleNewProject} from '../../actions'
 import './Nav.css'
 
@@ -31,13 +31,16 @@ const Nav = ({ projects, setCurrentProject, toggleNewProject, currentProject }) 
         <span className='u2'>u</span>
         <span className='r'>r</span>
         </h1>
-      <div className='project-control-container'>
-        <Button id='new-project-button' onClick={clickNewProject}>New Project</Button>
-        <Dropdown id='new-project-dropdown' text={`Project: ${currentProject.name}`}>
-          <Dropdown.Menu>
-            {buildProjects}
-          </Dropdown.Menu>
-        </Dropdown>
+      <div className='nav-control-bar'>
+        <div className='project-control-container'>
+          <Button id='new-project-button' onClick={clickNewProject}>New Project</Button>
+          <Dropdown id='new-project-dropdown' text={`Project: ${currentProject.name}`}>
+            <Dropdown.Menu>
+              {buildProjects}
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+        <Icon name='delete' id='delete' size='large' color='red'/>
       </div>
       </section>
     </nav>

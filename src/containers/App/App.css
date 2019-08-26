@@ -1,7 +1,7 @@
 .body {
   padding: 4rem;
   background-color: #191919;
-  /* height: 100vh; */
+  min-height: 100vh;
   color: #bbbbbb;
 }
 

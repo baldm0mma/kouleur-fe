@@ -6,9 +6,22 @@ nav{
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 85%;
   margin: auto;
   padding: 1rem;
+}
+
+.nav-control-bar {
+  display: flex;
+}
+
+#delete {
+  align-self: flex-end;
+  margin-bottom: 12px;
+}
+
+#delete:hover {
+  transform: scale(1.3);
 }
 
 #new-project-dropdown {
