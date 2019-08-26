@@ -13,7 +13,7 @@ import Nav from '../Nav/Nav.js';
 import NewProjectModal from '../NewProjectModal/NewProjectModal';
 import PalettesContainer from '../PalettesContainer/PalettesContainer';
 import React, { Component } from 'react';
-import  Picker  from '../Picker/Picker';
+import Picker from '../Picker/Picker';
 
 export class App extends Component {
   componentDidMount = async () => {
