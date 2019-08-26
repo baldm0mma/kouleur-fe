@@ -1,16 +1,18 @@
 import { combineReducers } from 'redux';
+import { setCurrentPaletteReducer } from './currentPaletteReducer';
 import { setCurrentProjectReducer } from './setCurrentProjectReducer';
+import { setErrorReducer } from './setErrorReducer';
 import { setPalettesReducer } from './setPalettesReducer';
 import { setProjectsReducer } from './setProjectsReducer';
-import { setErrorReducer } from './setErrorReducer';
+import { toggleNewPaletteReducer } from './toggleNewPaletteReducer';
 import { toggleNewProjectReducer } from './toggleNewProjectReducer';
-import { setCurrentPaletteReducer } from './currentPaletteReducer';
 
 export const rootReducer = combineReducers({
+  currentPalette: setCurrentPaletteReducer,
   currentProject: setCurrentProjectReducer,
-  palettes: setPalettesReducer,
-  projects: setProjectsReducer,
   errorMessage: setErrorReducer,
+  newPaletteToggle: toggleNewPaletteReducer,
   newProjectToggle: toggleNewProjectReducer,
-  currentPalette: setCurrentPaletteReducer
+  palettes: setPalettesReducer,
+  projects: setProjectsReducer
 });

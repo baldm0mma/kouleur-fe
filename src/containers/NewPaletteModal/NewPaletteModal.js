@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './NewProjectModal.css';
+import './NewPaletteModal.css';
 import { connect } from 'react-redux';
 import { setCurrentProject, toggleNewProject, setError, setProjects } from '../../actions';
 import { getAllProjectsUrl } from '../../utilities/urls';
@@ -10,16 +10,16 @@ class NewProjectModal extends Component {
   constructor() {
     super();
     this.state = {
-      project_name: ''
+      palette_name: ''
     };
   }
 
   handleNameChange = e => {
-    this.setState({ project_name: e.target.value });
+    this.setState({ palette_name: e.target.value });
   };
 
-  makeNewProject = async () => {
-    const name = this.state.project_name;
+  makeNewPalette = async () => {
+    const name = this.state.palette_name;
     try {
       const response = await postProjectName(getAllProjectsUrl, name);
       this.props.setCurrentProject(response, name);

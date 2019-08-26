@@ -27,9 +27,14 @@ export const toggleNewProject = boolean => ({
 export const setCurrentPalette = palette => ({
   type: 'SET_CURRENT_PALETTE',
   palette
-})
+});
 
 export const toggleLock = num => ({
   type: 'TOGGLE_LOCK',
   num
-})
+});
+
+export const toggleNewPalette = boolean => ({
+  type: 'TOGGLE_NEW_PALETTE',
+  boolean
+});

@@ -4,7 +4,7 @@
 
 .color-swatch{
   height: 50vh;
-  transition: all 2s ease;
+  transition: all 1.5s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,8 +17,9 @@
 #hex {
   opacity: .5;
   font-size: 2rem;
+  transition: all 1.5s ease;
 } 
 
 #lock {
-  align-self: flex-end;
+  align-self: flex-start;
 }
