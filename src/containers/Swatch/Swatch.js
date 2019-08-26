@@ -30,7 +30,7 @@ const  Swatch = ({ hex, isLocked, toggleLock, num }) => {
         )}
         {!isLocked && (
           <Icon
-            name='unlock'
+            name='lock open'
             style={{ color: `${chooseFontColor(hex)}` }}
             id='lock'
             size='big'
@@ -46,8 +46,7 @@ const  Swatch = ({ hex, isLocked, toggleLock, num }) => {
 
 
 export const mapDispatchToProps = dispatch => ({
-  setCurrentPalette: currentPalette =>
-  dispatch(setCurrentPalette(currentPalette)),
+  setCurrentPalette: currentPalette => dispatch(setCurrentPalette(currentPalette)),
   toggleLock: num => dispatch(toggleLock(num))
 });
 

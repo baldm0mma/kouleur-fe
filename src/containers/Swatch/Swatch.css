@@ -8,13 +8,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
 }
 
 
-#lock, #hex{
-  opacity: .5;
+#lock, 
+#hex {
   opacity: .5;
   font-size: 2rem;
-  align-self: center;
 } 
+
+#lock {
+  align-self: flex-end;
+}
