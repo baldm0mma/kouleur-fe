@@ -5,4 +5,23 @@
 .color-swatch{
   height: 50vh;
   transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: .1s ease-in-out box-shadow .1s ease-in-out;
 }
+
+#hex{
+  opacity: .5;
+  font-size: 2rem;
+  align-self: center;
+  margin-top: auto;
+  padding: 0px;
+}
+
+#lock{
+  opacity: .5;
+  margin-top: 4rem;
+  align-self: center;
+  size: 200px;
+} 

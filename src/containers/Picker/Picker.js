@@ -38,7 +38,7 @@ export class Picker extends Component {
 
   createSwatches = () => {
     return this.props.currentPalette.map(color => {
-      return <Swatch hex={color.hex} />
+      return <Swatch hex={color.hex} isLocked={color.isLocked}/>
     })
   }
 
