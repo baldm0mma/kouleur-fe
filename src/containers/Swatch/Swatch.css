@@ -1,5 +1,6 @@
 .swatch {
   flex: 1;
+  transition: all .3s ease;
 }
 
 .color-swatch{
@@ -21,5 +22,9 @@
 } 
 
 #lock {
-  align-self: flex-start;
+  /* align-self: flex-start; */
+}
+
+.swatch:hover {
+  flex: 1.07;
 }
