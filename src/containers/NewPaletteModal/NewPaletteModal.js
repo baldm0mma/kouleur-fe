@@ -22,7 +22,7 @@ class NewPaletteModal extends Component {
     const {currentProject, currentPalette} = this.props
     const name = this.state.palette_name;
     try {
-      const response = await postNewPalette(postNewPaletteUrl, currentProject.id, name, currentPalette[0].hex,
+      await postNewPalette(postNewPaletteUrl, currentProject.id, name, currentPalette[0].hex,
       currentPalette[1].hex, currentPalette[2].hex, currentPalette[3].hex, currentPalette[4].hex);
       const palettes = await getProjects(getAllPalettesUrl);
       await this.props.setPalettes(palettes);

@@ -5,7 +5,7 @@ import {setCurrentProject, toggleNewProject} from '../../actions'
 import './Nav.css'
 
 
-const Nav = ({ projects, setCurrentProject, toggleNewProject }) => {
+const Nav = ({ projects, setCurrentProject, toggleNewProject, currentProject }) => {
 
   const handleClick = (id, name) => {
     setCurrentProject(id, name)
@@ -21,7 +21,7 @@ const Nav = ({ projects, setCurrentProject, toggleNewProject }) => {
 
   return(
     <nav>
-      <section class='nav-wrapper'>
+      <section className='nav-wrapper'>
       <h1 className='site-title'>
         <span className='k'>K</span>
         <span className='o'>o</span>
@@ -33,7 +33,7 @@ const Nav = ({ projects, setCurrentProject, toggleNewProject }) => {
         </h1>
       <div className='project-control-container'>
         <Button id='new-project-button' onClick={clickNewProject}>New Project</Button>
-        <Dropdown id='new-project-dropdown' text='Projects'>
+        <Dropdown id='new-project-dropdown' text={`Project: ${currentProject.name}`}>
           <Dropdown.Menu>
             {buildProjects}
           </Dropdown.Menu>
@@ -46,8 +46,9 @@ const Nav = ({ projects, setCurrentProject, toggleNewProject }) => {
 }
 
 
-export const mapStateToProps = ({ projects }) => ({
+export const mapStateToProps = ({ projects, currentProject }) => ({
   projects,
+  currentProject
 })
 
 export const mapDispatchToProps = dispatch => ({

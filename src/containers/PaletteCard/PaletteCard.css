@@ -1,0 +1,12 @@
+.small-palette-container {
+  margin: 50px 35px;
+}
+
+.small-palette-display {
+  display: flex;
+}
+.small-palette-display div {
+  /* flex: 1; */
+  height: 150px;
+  width: 40px;
+}

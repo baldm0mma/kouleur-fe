@@ -1,6 +1,10 @@
 export const getProjects = async url => {
   try {
     const response = await fetch(url);
+     if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error);
+    }
     const parsed = await response.json();
     return parsed;
   } catch (error) {

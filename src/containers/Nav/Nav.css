@@ -12,16 +12,23 @@ nav{
 }
 
 #new-project-dropdown {
-  margin-left: 4rem;
+  margin-top: 2rem;
+}
+
+#new-project-button {
+  width: 15rem;
+  align-self: flex-end;
 }
 
 .project-control-container {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   font-size: 1.3rem;
 }
 
 .site-title {
-  font-size: 4em;
+  font-size: 5em;
   padding: 0;
 }
 

@@ -11,6 +11,7 @@ import {
 import NewPaletteModal from '../NewPaletteModal/NewPaletteModal';
 import Nav from '../Nav/Nav.js';
 import NewProjectModal from '../NewProjectModal/NewProjectModal';
+import PalettesContainer from '../PalettesContainer/PalettesContainer';
 import React, { Component } from 'react';
 import  Picker  from '../Picker/Picker';
 
@@ -35,10 +36,11 @@ export class App extends Component {
       <main>
         <Nav />
         <section className='body'>
-        {this.props.newProjectToggle && <NewProjectModal />}
-        {this.props.newPaletteToggle && <NewPaletteModal />}
-        <h3>Current Project: {this.props.currentProject.name}</h3>
-        <Picker></Picker>
+          {this.props.newProjectToggle && <NewProjectModal />}
+          {this.props.newPaletteToggle && <NewPaletteModal />}
+          {/* <h3>Current Project: {this.props.currentProject.name}</h3> */}
+          <Picker></Picker>
+          <PalettesContainer />
         </section>
       </main>
     );
