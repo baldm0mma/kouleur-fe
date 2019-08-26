@@ -40,7 +40,8 @@ export const postNewPalette = async (
   color_1,
   color_2,
   color_3,
-  color_4
+  color_4,
+  color_5
 ) => {
   const body = {
     palette: {
@@ -49,7 +50,8 @@ export const postNewPalette = async (
       color_1,
       color_2,
       color_3,
-      color_4
+      color_4,
+      color_5
     }
   };
   const options = {

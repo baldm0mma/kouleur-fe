@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './NewPaletteModal.css';
 import { connect } from 'react-redux';
-import { setCurrentProject, toggleNewProject, setError, setProjects } from '../../actions';
-import { getAllProjectsUrl } from '../../utilities/urls';
+import { toggleNewPalette, setError, setPalettes } from '../../actions';
+import { postNewPaletteUrl, getAllPalettesUrl } from '../../utilities/urls';
 import { Button, Form } from 'semantic-ui-react';
-import { postProjectName, getProjects } from '../../utilities/apiCalls';
+import { postNewPalette, getProjects } from '../../utilities/apiCalls';
 
-class NewProjectModal extends Component {
+class NewPaletteModal extends Component {
   constructor() {
     super();
     this.state = {
@@ -19,13 +19,14 @@ class NewProjectModal extends Component {
   };
 
   makeNewPalette = async () => {
+    const {currentProject, currentPalette} = this.props
     const name = this.state.palette_name;
     try {
-      const response = await postProjectName(getAllProjectsUrl, name);
-      this.props.setCurrentProject(response, name);
-      const projects = await getProjects(getAllProjectsUrl);
-      await this.props.setProjects(projects);
-      this.props.toggleNewProject(false);
+      const response = await postNewPalette(postNewPaletteUrl, currentProject.id, name, currentPalette[0].hex,
+      currentPalette[1].hex, currentPalette[2].hex, currentPalette[3].hex, currentPalette[4].hex);
+      const palettes = await getProjects(getAllPalettesUrl);
+      await this.props.setPalettes(palettes);
+      this.props.toggleNewPalette(false);
     } catch (error) {
       this.props.setError(error.message);
     }
@@ -37,23 +38,23 @@ class NewProjectModal extends Component {
         <div className='modal-card'>
           <Form>
             <Form.Field>
-              <label id='modal-title'>Project Name</label>
+              <label id='modal-title'>Palette Name</label>
               {this.props.errorMessage && <p>Sorry, there was an issue posting: {this.props.errorMessage}</p>}
               <input
-                placeholder='Project Name'
-                value={this.state.project_name}
+                placeholder='Palette Name'
+                value={this.state.palette_name}
                 onChange={e => this.handleNameChange(e)}
               />
             </Form.Field>
             <Button
               id='create-project-button'
               type='submit'
-              onClick={this.makeNewProject}
+              onClick={this.makeNewPalette}
             >
-              Create Project
+              Create Palette
             </Button>
             <Button
-              onClick={() => this.props.toggleNewProject(false)}
+              onClick={() => this.props.toggleNewPalette(false)}
               type='submit'
             >
               Cancel
@@ -66,19 +67,20 @@ class NewProjectModal extends Component {
   }
 }
 
-export const mapStateToProps = ({ projects, errorMessage }) => ({
+export const mapStateToProps = ({ projects, errorMessage, currentPalette, currentProject }) => ({
   projects,
-  errorMessage
+  errorMessage, 
+  currentPalette,
+  currentProject
 });
 
 export const mapDispatchToProps = dispatch => ({
-  setCurrentProject: (id, name) => dispatch(setCurrentProject(id, name)),
-  toggleNewProject: boolean => dispatch(toggleNewProject(boolean)),
+  toggleNewPalette: boolean => dispatch(toggleNewPalette(boolean)),
+  setPalettes: results => dispatch(setPalettes(results)),
   setError: error => dispatch(setError(error)),
-  setProjects: results => dispatch(setProjects(results))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewProjectModal);
+)(NewPaletteModal);
