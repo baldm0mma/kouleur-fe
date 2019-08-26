@@ -1,6 +1,10 @@
 export const getProjects = async url => {
   try {
     const response = await fetch(url);
+     if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error);
+    }
     const parsed = await response.json();
     return parsed;
   } catch (error) {
@@ -21,12 +25,52 @@ export const postProjectName = async (url, name) => {
   };
   try {
     const response = await fetch(url, options);
-    if(!response.ok) {
+    if (!response.ok) {
       const error = await response.json();
       throw new Error(error);
     }
     const parsed = await response.json();
-    await console.log('parsed')
+    await console.log('parsed');
+    return parsed;
+  } catch (error) {
+    throw Error(error);
+  }
+};
+
+export const postNewPalette = async (
+  url,
+  project_id,
+  palette_name,
+  color_1,
+  color_2,
+  color_3,
+  color_4,
+  color_5
+) => {
+  const body = {
+    palette: {
+      project_id,
+      palette_name,
+      color_1,
+      color_2,
+      color_3,
+      color_4,
+      color_5
+    }
+  };
+  const options = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  };
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error);
+    }
+    const parsed = await response.json();
+    await console.log('parsed');
     return parsed;
   } catch (error) {
     throw Error(error);

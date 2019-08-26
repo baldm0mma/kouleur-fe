@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './NewProjectModal.css';
 import { connect } from 'react-redux';
 import { setCurrentProject, toggleNewProject, setError, setProjects } from '../../actions';
-import { devProjects } from '../../utilities/urls';
+import { getAllProjectsUrl } from '../../utilities/urls';
 import { Button, Form } from 'semantic-ui-react';
 import { postProjectName, getProjects } from '../../utilities/apiCalls';
 
@@ -21,9 +21,9 @@ class NewProjectModal extends Component {
   makeNewProject = async () => {
     const name = this.state.project_name;
     try {
-      const response = await postProjectName(devProjects, name);
+      const response = await postProjectName(getAllProjectsUrl, name);
       this.props.setCurrentProject(response, name);
-      const projects = await getProjects(devProjects);
+      const projects = await getProjects(getAllProjectsUrl);
       await this.props.setProjects(projects);
       this.props.toggleNewProject(false);
     } catch (error) {

@@ -4,5 +4,22 @@
 
 .color-swatch{
   height: 50vh;
-  transition: all 0.5s ease;
+  transition: all 1.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+#lock, 
+#hex {
+  opacity: .5;
+  font-size: 2rem;
+  transition: all 1.5s ease;
+} 
+
+#lock {
+  align-self: flex-start;
 }

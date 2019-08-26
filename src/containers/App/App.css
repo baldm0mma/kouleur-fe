@@ -1,6 +1,10 @@
 .body {
   padding: 4rem;
   background-color: #191919;
-  height: 100vh;
+  /* height: 100vh; */
   color: #bbbbbb;
+}
+
+.html {
+  background-color: #191919;
 }
