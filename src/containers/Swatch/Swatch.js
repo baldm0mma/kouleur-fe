@@ -1,76 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { setCurrentPalette, toggleLock } from '../../actions';
 import './Swatch.css';
-import { Button, Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 
-class Swatch extends Component {
-  constructor() {
-    super();
-    this.state = {
-      toggleLockDisplay: false
-    };
-  }
+const  Swatch = ({ hex, isLocked, toggleLock, num }) => {
 
-  toggleLockDisplay = () => {
-    this.setState({ toggleLockDisplay: !this.state.toggleLockDisplay });
-  };
-
-  clickLock = num => {
-    console.log(num);
-    this.props.toggleLock(num);
-  };
-
-  chooseFontColor = hex => {
-    var color = hex.charAt(0) === '#' ? hex.substring(1, 7) : hex;
-    var r = parseInt(hex.substring(0, 2), 16); // hexToR
-    var g = parseInt(hex.substring(2, 4), 16); // hexToG
-    var b = parseInt(hex.substring(4, 6), 16); // hexToB
+  const chooseFontColor = hex => {
+    var r = parseInt(hex.substring(0, 2), 16); 
+    var g = parseInt(hex.substring(2, 4), 16); 
+    var b = parseInt(hex.substring(4, 6), 16); 
     return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? '#000000' : '#ffffff';
   };
 
-  render() {
-    const { hex, isLocked, toggleLock, num } = this.props;
-    return (
-      <article
-        className='swatch'
-        onMouseEnter={this.toggleLockDisplay}
-        onMouseLeave={this.toggleLockDisplay}
+  return (
+    <article className='swatch'>
+      <section
+        className='color-swatch'
+        style={{ backgroundColor: `#${hex}` }}
+        onClick={() => toggleLock(num)}
       >
-        <section
-          className='color-swatch'
-          style={{ backgroundColor: `#${hex}` }}
-        >
-          {this.state.toggleLockDisplay && isLocked && (
-            <Icon
-              name='lock'
-              style={{ color: `${this.chooseFontColor(hex)}` }}
-              id='lock'
-              size='huge'
-              onClick={() => this.clickLock(this.props.num)}
-            />
-          )}
-          {this.state.toggleLockDisplay && !isLocked && (
-            <Icon
-              name='unlock'
-              style={{ color: `${this.chooseFontColor(hex)}` }}
-              id='lock'
-              size='huge'
-              onClick={() => this.clickLock(this.props.num)}
-            />
-          )}
-          <p style={{ color: `${this.chooseFontColor(hex)}` }} id='hex'>
-            #{hex.toUpperCase()}
-          </p>
-        </section>
-      </article>
-    );
-  }
+        {isLocked && (
+          <Icon
+            name='lock'
+            style={{ color: `${chooseFontColor(hex)}` }}
+            id='lock'
+            size='big'
+          />
+        )}
+        {!isLocked && (
+          <Icon
+            name='unlock'
+            style={{ color: `${chooseFontColor(hex)}` }}
+            id='lock'
+            size='big'
+          />
+        )}
+        <p style={{ color: `${chooseFontColor(hex)}` }} id='hex'>
+          #{hex.toUpperCase()}
+        </p>
+      </section>
+    </article>
+  );
 }
+
 
 export const mapDispatchToProps = dispatch => ({
   setCurrentPalette: currentPalette =>
-    dispatch(setCurrentPalette(currentPalette)),
+  dispatch(setCurrentPalette(currentPalette)),
   toggleLock: num => dispatch(toggleLock(num))
 });
 
