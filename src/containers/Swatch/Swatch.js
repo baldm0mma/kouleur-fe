@@ -4,7 +4,7 @@ import { setCurrentPalette, toggleLock } from '../../actions';
 import './Swatch.css';
 import { Icon } from 'semantic-ui-react';
 
-const  Swatch = ({ hex, isLocked, toggleLock, num }) => {
+export const  Swatch = ({ hex, isLocked, toggleLock, num }) => {
 
   const chooseFontColor = hex => {
     var r = parseInt(hex.substring(0, 2), 16); 

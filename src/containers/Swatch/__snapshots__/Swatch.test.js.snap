@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Swatch should match the snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`Swatch should match the snapshot 2`] = `ShallowWrapper {}`;
