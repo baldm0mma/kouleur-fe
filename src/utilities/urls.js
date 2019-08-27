@@ -1,7 +1,7 @@
-export const getAllProjectsUrl = 'http://localhost:3001/api/v1/projects';
-export const getAllPalettesUrl = 'http://localhost:3001/api/v1/palettes/search';
-export const postNewPaletteUrl = 'http://localhost:3001/api/v1/palettes';
-export const deleteProjectUrl = id =>
-  `http://localhost:3001/api/v1/projects/${id}`;
-export const deletePaletteUrl = id =>
-  `http://localhost:3001/api/v1/palettes/${id}`;
+const path = process.env.REACT_APP_BACKEND_URL;
+
+export const getAllProjectsUrl = `${path}/projects`;
+export const getAllPalettesUrl = `${path}/palettes/search`;
+export const postNewPaletteUrl = `${path}/palettes`;
+export const deleteProjectUrl = id => `${path}/projects/${id}`;
+export const deletePaletteUrl = id => `${path}/palettes/${id}`;
