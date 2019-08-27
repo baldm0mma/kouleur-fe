@@ -1,11 +1,11 @@
 export const projects = [
   {
     id: 1,
-    project_name: 'YumTimTumTam'
+    name: 'YumTimTumTam'
   },
   {
     id: 2,
-    project_name: 'SkippityTippity'
+    name: 'SkippityTippity'
   }
 ];
 
