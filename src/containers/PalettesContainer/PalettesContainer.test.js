@@ -21,7 +21,5 @@ describe('PalettesContainer', () => {
     const mappedProps = mapStateToProps({currentProject: currentProject}, {palettes: palettes});
     expect(mappedProps).toEqual({currentProject});
   })
-
   
-
 })
