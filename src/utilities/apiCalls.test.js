@@ -3,7 +3,6 @@ import * as mockData from './mockData';
 
 describe('apiCalls', () => {
   // const mockPromiseError = 'response.json is not a function';
-
   // describe('findGenres', () => {
   //   beforeEach(() => {
   //     window.fetch = jest.fn().mockImplementation(() =>

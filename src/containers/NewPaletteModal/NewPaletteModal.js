@@ -19,11 +19,19 @@ class NewPaletteModal extends Component {
   };
 
   makeNewPalette = async () => {
-    const {currentProject, currentPalette} = this.props
+    const { currentProject, currentPalette } = this.props;
     const name = this.state.palette_name;
     try {
-      await postNewPalette(postNewPaletteUrl, currentProject.id, name, currentPalette[0].hex,
-      currentPalette[1].hex, currentPalette[2].hex, currentPalette[3].hex, currentPalette[4].hex);
+      await postNewPalette(
+        postNewPaletteUrl,
+        currentProject.id,
+        name,
+        currentPalette[0].hex,
+        currentPalette[1].hex,
+        currentPalette[2].hex,
+        currentPalette[3].hex,
+        currentPalette[4].hex
+      );
       const palettes = await getProjects(getAllPalettesUrl);
       await this.props.setPalettes(palettes);
       this.props.toggleNewPalette(false);
@@ -39,7 +47,11 @@ class NewPaletteModal extends Component {
           <Form>
             <Form.Field>
               <label id='modal-title'>Palette Name</label>
-              {this.props.errorMessage && <p>Sorry, there was an issue posting: {this.props.errorMessage}</p>}
+              {this.props.errorMessage && (
+                <p>
+                  Sorry, there was an issue posting: {this.props.errorMessage}
+                </p>
+              )}
               <input
                 placeholder='Palette Name'
                 value={this.state.palette_name}
@@ -67,9 +79,14 @@ class NewPaletteModal extends Component {
   }
 }
 
-export const mapStateToProps = ({ projects, errorMessage, currentPalette, currentProject }) => ({
+export const mapStateToProps = ({
   projects,
-  errorMessage, 
+  errorMessage,
+  currentPalette,
+  currentProject
+}) => ({
+  projects,
+  errorMessage,
   currentPalette,
   currentProject
 });
@@ -77,7 +94,7 @@ export const mapStateToProps = ({ projects, errorMessage, currentPalette, curren
 export const mapDispatchToProps = dispatch => ({
   toggleNewPalette: boolean => dispatch(toggleNewPalette(boolean)),
   setPalettes: results => dispatch(setPalettes(results)),
-  setError: error => dispatch(setError(error)),
+  setError: error => dispatch(setError(error))
 });
 
 export default connect(

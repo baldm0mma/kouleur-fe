@@ -5,8 +5,22 @@
 .small-palette-display {
   display: flex;
 }
+
 .small-palette-display div {
   /* flex: 1; */
   height: 150px;
   width: 40px;
+}
+
+.palette-control-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#delete-palette {
+  margin-bottom: 2px;
+}
+
+#delete-palette:hover {
+  transform: scale(1.3);
 }

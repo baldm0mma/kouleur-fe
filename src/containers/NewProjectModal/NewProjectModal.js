@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import './NewProjectModal.css';
 import { connect } from 'react-redux';
-import { setCurrentProject, toggleNewProject, setError, setProjects } from '../../actions';
+import {
+  setCurrentProject,
+  toggleNewProject,
+  setError,
+  setProjects
+} from '../../actions';
 import { getAllProjectsUrl } from '../../utilities/urls';
 import { Button, Form } from 'semantic-ui-react';
 import { postProjectName, getProjects } from '../../utilities/apiCalls';
@@ -38,7 +43,11 @@ export class NewProjectModal extends Component {
           <Form>
             <Form.Field>
               <label id='modal-title'>Project Name</label>
-              {this.props.errorMessage && <p>Sorry, there was an issue posting: {this.props.errorMessage}</p>}
+              {this.props.errorMessage && (
+                <p>
+                  Sorry, there was an issue posting: {this.props.errorMessage}
+                </p>
+              )}
               <input
                 placeholder='Project Name'
                 value={this.state.project_name}
