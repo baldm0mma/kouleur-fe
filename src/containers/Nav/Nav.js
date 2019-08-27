@@ -3,21 +3,27 @@ import { connect } from 'react-redux';
 import { Dropdown, Button, Icon } from 'semantic-ui-react';
 import {
   setCurrentProject,
-  toggleNewProject,
+  setError,
+  setPalettes,
   setProjects,
-  setError
+  toggleNewProject
 } from '../../actions';
 import { deleteProject, getProjects } from '../../utilities/apiCalls';
-import { deleteProjectUrl, getAllProjectsUrl } from '../../utilities/urls';
+import {
+  deleteProjectUrl,
+  getAllProjectsUrl,
+  getAllPalettesUrl
+} from '../../utilities/urls';
 import './Nav.css';
 
 const Nav = ({
+  currentProject,
   projects,
   setCurrentProject,
-  toggleNewProject,
-  currentProject,
   setError,
-  setProjects
+  setPalettes,
+  setProjects,
+  toggleNewProject
 }) => {
   const handleClick = (id, name) => {
     setCurrentProject(id, name);
@@ -44,6 +50,8 @@ const Nav = ({
       const projects = await getProjects(getAllProjectsUrl);
       await setProjects(projects);
       await setCurrentProject(projects[0].id, projects[0].project_name);
+      const palettes = await getProjects(getAllPalettesUrl);
+      await setPalettes(palettes);
     } catch (error) {
       setError(error);
     }
@@ -87,15 +95,16 @@ const Nav = ({
 };
 
 export const mapStateToProps = ({ projects, currentProject }) => ({
-  projects,
-  currentProject
+  currentProject,
+  projects
 });
 
 export const mapDispatchToProps = dispatch => ({
   setCurrentProject: (id, name) => dispatch(setCurrentProject(id, name)),
-  toggleNewProject: boolean => dispatch(toggleNewProject(boolean)),
+  setError: error => dispatch(setError(error)),
+  setPalettes: palettes => dispatch(setPalettes(palettes)),
   setProjects: projects => dispatch(setProjects(projects)),
-  setError: error => dispatch(setError(error))
+  toggleNewProject: boolean => dispatch(toggleNewProject(boolean))
 });
 
 export default connect(
