@@ -8,7 +8,7 @@
 }
 
 .color-swatch{
-  height: 50vh;
+  height: 40vh;
   transition: all 1.5s ease;
   display: flex;
   flex-direction: column;

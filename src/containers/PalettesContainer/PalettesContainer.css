@@ -2,4 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  border-top: 1px solid #444;
+  margin-top: 50px;
 }
