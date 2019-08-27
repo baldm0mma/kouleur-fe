@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { setCurrentPaletteReducer } from './currentPaletteReducer';
+import { setCurrentPaletteReducer } from './setCurrentPaletteReducer';
 import { setCurrentProjectReducer } from './setCurrentProjectReducer';
 import { setErrorReducer } from './setErrorReducer';
 import { setPalettesReducer } from './setPalettesReducer';

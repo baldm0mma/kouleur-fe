@@ -33,3 +33,11 @@ export const palettes = [
 ];
 
 export const errorMessage = "Nah man, that ain't gonna work for me";
+
+export const setCurrentPaletteReducer_defaultState = [
+  { id: 0, hex: '', isLocked: false },
+  { id: 1, hex: '', isLocked: false },
+  { id: 2, hex: '', isLocked: false },
+  { id: 3, hex: '', isLocked: false },
+  { id: 4, hex: '', isLocked: false }
+];
