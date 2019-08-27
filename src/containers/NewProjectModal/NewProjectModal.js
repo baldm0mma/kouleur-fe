@@ -6,7 +6,7 @@ import { getAllProjectsUrl } from '../../utilities/urls';
 import { Button, Form } from 'semantic-ui-react';
 import { postProjectName, getProjects } from '../../utilities/apiCalls';
 
-class NewProjectModal extends Component {
+export class NewProjectModal extends Component {
   constructor() {
     super();
     this.state = {
