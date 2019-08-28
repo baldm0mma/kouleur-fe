@@ -21,14 +21,14 @@ describe('Palettecard', () => {
     expect(wrapper).toMatchSnapshot();
   });
   
-  it('should map toggleNewPalette', () => {
+  it('should map setPallete', () => {
   const mockDispatch = jest.fn();
   const mockAction = setPalettes([{pallete1: 'fffff'}]);
   const mappedProps = mapDispatchToProps(mockDispatch);
   mappedProps.setPalettes([{pallete1: 'fffff'}]);
   expect(mockDispatch).toHaveBeenCalledWith(mockAction);
 });
-  it('should map toggleNewPalette', () => {
+  it('should map setError', () => {
     const mockDispatch = jest.fn();
     const mockAction = setError('Error');
     const mappedProps = mapDispatchToProps(mockDispatch);
