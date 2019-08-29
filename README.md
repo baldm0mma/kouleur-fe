@@ -1,80 +1,43 @@
-# BetterFlix
+# Kouleur - A RESTful API consuming palette picking app
 
+## Description
 
-## Available Scripts
+Kouleur is the React front-end of a full-stack color palette picker application. We used Semantic UI elements to style and design an elegant, thoughtful, and intuitive UI/UX experience. This FE app pairs with a PostgreSQL/Node.js/Express.js RESTful API which we also built our ourselves that utilizes semantic HTTP methods, intuitive url pathway naming conventions, and a one-to-many database of our own design. You can find our code for our API [here](https://github.com/baldm0mma/kouleur-api).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Successes
 
-In the project directory, you can run:
+REACT/REDUX PAIRING: We spent quite a bit of time discussing whether or not the use of a state management tool would be justified in this project. Ultimately, because of the nested nature of a number of our components/containers, we decided too much prop-drilling would be needed, and therefor Redux - while the setup is unarguably time consuming - would be worth our while in the end. That DID, fortunately, end up being the case. Data was considerably easier to manipulate and display with the usage of Redux, and certainly worth the time, effort, and coding-space.
 
-### `npm start`
+SEMANTIC UI: This was our first time using a styling bootstrap; and even so, we only used one or two main components, i.e., our buttons, and our single dropdown. Semantic UI is based on Google's Material UI, and is easy and intuitive to use. All of our other components/containers were coded and styled by us exclusively (we believe that bootstrapping is a great too for small elements only), but nevertheless, the few hours we saved by not having to worry about the button and dropdown styling and structure let us focus on other small UI/UX details that really add value to the app.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+SMALL DETAILS: We both believe that the devil, as well as the angels, reside in the details. That is why we spent a significant amount of time creating small, inconspicuous UX details. For example, our main color palette's swatches have a flex-scale of 1.3 on hover, giving a little bit of dynamism of movement when scrolling. Another detail we're proud of is swatch text and icon; depending on brightness of the background swatch color, the text and icon color will either display black - if the swatch color is light -  or while - if that swatch color is dark.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Project Challenges
 
-### `npm test`
+ASYNC TESTING: Front-end async testing is difficult for many developers, us included. It is not as simple as just testing an input/output; you need to mock functions, mock clicks, reassign global JavaScript object methods - like fetch - all before you can even begin the testing in the first place. Not to mention with asynchronous testing, there are always unforseen call-stack timing that often rear theer ugly heads. Nevertheless, we still managed %%%% test coverage, and are very proud of that!
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Extensions/Issues
 
-### `npm build`
+* 
 
-Will create a production ready build; ready for shipping.
+## Project Tech Emphasis
 
-### `npm eject`
+* React
+* Redux
+* Jest
+* Enzyme
+* RESTful API fetches
+* Semantic UI
 
-Copies all the configuration files and the transitive dependencies right into the project so the dev can have full control over them.
+## Project Management
+
+We used GitHub Issues for our project management needs.
 
 ## Test Coverage
 
 ![Test Coverage](./assets/Kouleur-FE-Test-Coverage.png)
 
-## Description
-
-This project is a movie app that allows the user to see now playing, popular, and currently top rated movies. The user can also select a genre to see all of the recommended movies in that genre. Once the user is logged in to their account and viewing movies, they can select a movie to see more information about the movie or favorite the movie. All of their favorite movies will be stored and are viewable upon re-login. If the user does not see a movie they are looking for, they can search for a specific movie. This project was completed in a week.
-
-## Project Successes
-
-This project required 1-2 api calls, however the modular code was build to run up to 20 different fetch calls to the moviedb to grab different sets of movie data. This increases the pleasure felt during the user experience as the user can select from a variety of movie genres. The developers implemented thunks for the first time and over half of the app has passing test coverage.
-
-## Project Challenges
-
-Writing modular code required careful planning and strategic architecture. Creating a flat redux store also proved to be a challenge. Working through merge conflicts was tedious mostly due to text editor formatting differences. The app stlying was up to the developers whereas other projects have had a style comp, so extra effort went into creating a cleanly styled app. Lastly, keeping track of local state vs the store was a conceptual hurdle.
-
-
-## Project Extensions/Issues
-
-* Only at 72% Test Coverage
-* User Favorites need to be saved to store
-* Redesign the store
-* Change all fetchs to thunks
-
-## Project Tech Emphasis
-
-* HTML
-* SCSS
-* JavaScript
-* React
-* React Router
-* Redux
-* Jest
-* Enzyme
-* PropTypes
-* ES6 Classes
-* API fetches
-* Thunks Middleware
-* NPM
-
-## Project Management
-
-The team used a project management tool, Trello, and GitHub issues to manage workflow, along with Slack to manage remote communication.
-
-### Trello Board
-
-![Trello](./src/images/trello-board.png)
+The only lines untested were 500 status errors, which are difficult to simulate and often a sign of a larger database issue.
 
 ## Project Comps:
 
