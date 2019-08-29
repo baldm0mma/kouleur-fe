@@ -30,7 +30,7 @@ Copies all the configuration files and the transitive dependencies right into th
 
 ## Test Coverage
 
-![Test Coverage](./src/images/test-coverage.png)
+![Test Coverage](assets/Kouleur-FE-Test-Coverage.png)
 
 ## Description
 
