@@ -14,7 +14,7 @@ SMALL DETAILS: We both believe that the devil, as well as the angels, reside in 
 
 ## Project Challenges
 
-ASYNC TESTING: Front-end async testing is difficult for many developers, us included. It is not as simple as just testing an input/output; you need to mock functions, mock clicks, reassign global JavaScript object methods - like fetch - all before you can even begin the testing in the first place. Not to mention with asynchronous testing, there are always unforseen call-stack timing that often rear theer ugly heads. Nevertheless, we still managed %%%% test coverage, and are very proud of that!
+ASYNC TESTING: Front-end async testing is difficult for many developers, us included. It is not as simple as just testing an input/output; you need to mock functions, mock clicks, reassign global JavaScript object methods - like fetch - all before you can even begin the testing in the first place. Not to mention with asynchronous testing, there are always unforseen call-stack timing that often rear theer ugly heads. Nevertheless, we still managed %80 test coverage, and are very proud of that!
 
 ## Project Extensions/Issues
 
