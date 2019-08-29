@@ -34,10 +34,6 @@ ASYNC TESTING: Front-end async testing is difficult for many developers, us incl
 
 We used GitHub Issues for our project management needs.
 
-## Test Coverage
-
-![Test Coverage]()
-
 ## Project Comps:
 
 ### Home Page
