@@ -50,4 +50,4 @@ We used GitHub Issues for our project management needs.
 
 ## Developers
 
-[Jev Forsberg](https://github.com/baldm0mma)
+[Jev Forsberg](https://github.com/baldm0mma/); [Evan Markowitz](https://github.com/evanmarkowitz)
