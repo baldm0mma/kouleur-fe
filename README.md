@@ -18,7 +18,8 @@ ASYNC TESTING: Front-end async testing is difficult for many developers, us incl
 
 ## Project Extensions/Issues
 
-* 
+* Reach %95 test coverage.
+* Display hexadecimal color codes on hover for the already created palette tiles.
 
 ## Project Tech Emphasis
 
@@ -35,66 +36,18 @@ We used GitHub Issues for our project management needs.
 
 ## Test Coverage
 
-![Test Coverage](./assets/Kouleur-FE-Test-Coverage.png)
-
-The only lines untested were 500 status errors, which are difficult to simulate and often a sign of a larger database issue.
+![Test Coverage]()
 
 ## Project Comps:
 
 ### Home Page
 
-![Home Page](./src/images/HomePage.png)
-
-### Search
-
-![Search](./src/images/SearchPage.png)
-
-### Genres
-
-![Genres](./src/images/GenrePage.png)
-
-### Genre Page
-
-![Genres](./src/images/GenreSpecificPage.png)
-
-### Movie Card
-
-![Movie Card](./src/images/MovieCardPage.png)
-
-### Favorites
-
-![Favorites](./src/images/FavoritesPages.png)
-
-### Favorites Error
-
-![Favorites Error](./src/images/FavoriteError.png)
-
-### Sign In
-
-![Sign In](./src/images/SignUpPage.png)
-
-### Create Account
-
-![Create Account](./src/images/CreateAccount.png)
-
-### 404 Page
-
-![404 Page](./src/images/404Page.png)
+![Main Page](./assets/Kouleur-FE-Main-Screen.png)
 
 ### GIFS
 
-![GIF](./src/images/betterflix-categories.gif)
-
-
-![GIF](./src/images/betterflix-home-page.gif)
-
+![In Action](./assets/Kouleur.gif)
 
 ## Developers
 
-[Patrick Goulding](https://github.com/pgoulding)
-[Katherine Lewis](https://github.com/kalex19)
 [Jev Forsberg](https://github.com/baldm0mma)
-
-## Licensing
-
-All credit goes to <a href="turing.io">Turing School of Software</a> for providing the project specifications.
