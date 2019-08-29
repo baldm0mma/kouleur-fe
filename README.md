@@ -2,9 +2,7 @@
 
 ## Description
 
-Kouleur is the React front-end of a full-stack color palette picker application. We used Semantic UI elements to style and design an elegant, thoughtful, and intuitive UI/UX experience. This FE app pairs with a PostgreSQL/Node.js/Express.js RESTful API which we also built our ourselves that utilizes semantic HTTP methods, intuitive url pathway naming conventions, and a one-to-many database of our own design. You can find our code for our API [here](https://github.com/baldm0mma/kouleur-api).
-
-[Deployed Site on Heroku](https://kouleur.herokuapp.com/)
+Kouleur is the React front-end of a full-stack color palette picker application. We used Semantic UI elements to style and design an elegant, thoughtful, and intuitive UI/UX experience. This FE app pairs with a PostgreSQL/Node.js/Express.js RESTful API which we also built our ourselves that utilizes semantic HTTP methods, intuitive url pathway naming conventions, and a one-to-many database of our own design. You can find the code for our API [here](https://github.com/baldm0mma/kouleur-api), or visit our deployed site [here on Heroku](https://kouleur.herokuapp.com/)
 
 ## Project Successes
 
