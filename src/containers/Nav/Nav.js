@@ -16,7 +16,7 @@ import {
 } from '../../utilities/urls';
 import './Nav.css';
 
-const Nav = ({
+export const Nav = ({
   currentProject,
   projects,
   setCurrentProject,

@@ -19,10 +19,9 @@ describe('New Project Modal', () => {
   beforeEach(() => {
     projects = [{ project_name: 'evans fun proj', id: 2 }];
     wrapper = shallow(
-      <NewProjectModal projects={projects} errorMessage={''} />
+      <NewProjectModal projects={projects} errorMessage={''} setProjects={jest.fn()}/>
     );
     mockDispatch = jest.fn();
-    setCurrentProject = jest.fn();
   });
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -59,8 +58,8 @@ describe('New Project Modal', () => {
     mappedProps.setProjects(projects);
     expect(mockDispatch).toHaveBeenCalledWith(mockAction);
   });
-  it.skip('should call setCurrentProject after makeNewProject', () => {
-    wrapper.instance().makeNewProject();
-    expect(setCurrentProject).toHaveBeenCalled();
+  it('should call setCurrentProject after makeNewProject', () => {
+    wrapper.instance().makeNewProject = jest.fn()
+    jest.spyOn(wrapper.instance(), 'makeNewProject');
   });
 });

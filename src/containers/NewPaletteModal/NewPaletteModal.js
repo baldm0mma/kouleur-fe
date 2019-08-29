@@ -6,7 +6,7 @@ import { postNewPaletteUrl, getAllPalettesUrl } from '../../utilities/urls';
 import { Button, Form } from 'semantic-ui-react';
 import { postNewPalette, getProjects } from '../../utilities/apiCalls';
 
-class NewPaletteModal extends Component {
+export class NewPaletteModal extends Component {
   constructor() {
     super();
     this.state = {

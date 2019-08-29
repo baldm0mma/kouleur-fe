@@ -38,7 +38,6 @@ export class App extends Component {
         <section className='body'>
           {this.props.newProjectToggle && <NewProjectModal />}
           {this.props.newPaletteToggle && <NewPaletteModal />}
-          {/* <h3>Current Project: {this.props.currentProject.name}</h3> */}
           <Picker></Picker>
           <PalettesContainer />
         </section>
